@@ -24,7 +24,6 @@ function generateCallback(obj) {
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 alert(`${data.name}\nGender: ${data.gender} \nHeight: ${data.height}\nMass:${data.mass}\nSkin Color: ${data.skin_color}\nHair Color: ${data.hair_color}\nEye Color: ${data.eye_color}`)
             })
     }
@@ -35,8 +34,6 @@ function generateCallback(obj) {
 function displayPlanets() {
     const matchArray = findMatches(this.value, planets);
     const html = matchArray.map((planet) => {
-        const regex = new RegExp(this.value, 'gi');
-
         return `
           <div class="card">
             <h2>${planet.name}</h2>
